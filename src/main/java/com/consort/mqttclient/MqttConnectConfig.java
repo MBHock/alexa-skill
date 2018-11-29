@@ -5,17 +5,14 @@ import java.io.InputStream;
 import java.util.Objects;
 import java.util.Properties;
 
-import com.consort.mqttmsg.ConsortLogger;
-
 /**
  * @author <a href="mailto:mojammal.hock@consort-group.com">Mojammal Hock</a>
  */
 public enum MqttConnectConfig {
 
-  PORT, DB_HOST, DB_PORT, DB_DATABASE, DB_ORDERS_COLLECTION, DB_HANDLING_UNITS_COLLECTION, DB_LOGIN, DB_PWD, S3_HOST,
-  S3_MAIL_BUCKET, S3_LOGIN, S3_PWD, S3_MAIL_TEMPLATE, MQTT_HOST, MQTT_ORDER_IMPORT_TOPIC, MQTT_TSC_EVENTS_TOPIC,
-  MQTT_LOGIN, MQTT_PWD, MQTT_CLIENT_ID, MQTT_PERSISTENT_SESSION;
-  private static ConsortLogger logger = new ConsortLogger();
+  MQTT_HOST, MQTT_LOGIN, MQTT_PWD, MQTT_PORT, MQTT_PROTOCOL;
+
+  private static SimpleConsoleLogger logger = SimpleConsoleLogger.getLogger(MqttConnectConfig.class.getSimpleName());
 
   private static Properties properties = new Properties();
   static {
