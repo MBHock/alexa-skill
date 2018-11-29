@@ -1,5 +1,6 @@
 package com.consort.mqttclient;
 
+import java.time.LocalDateTime;
 import java.util.function.Supplier;
 
 /**
@@ -18,10 +19,10 @@ public class SimpleConsoleLogger {
   }
 
   public void log(Supplier<String> logSupplier) {
-    System.out.println(String.format("%s: %s", loggername, logSupplier.get()));
+    System.out.println(String.format("%s %s: %s", LocalDateTime.now(), loggername, logSupplier.get()));
   }
 
   public void log(String format, Object... args) {
-    System.out.println(String.format("%s: %s", loggername, String.format(format, args)));
+    System.out.println(String.format("%s %s: %s", LocalDateTime.now(), loggername, String.format(format, args)));
   }
 }

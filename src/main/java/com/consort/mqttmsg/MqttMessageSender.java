@@ -20,22 +20,26 @@ public class MqttMessageSender {
    * @throws MqttSecurityException
    */
   public static void main(String[] args) throws MqttException {
+    System.out.println(String.format("%s Start sending message.", LocalDateTime.now()));
+
     for (int counter = 0; counter < 20; counter++) {
       createCommand(counter);
     }
 
     System.out.println(String.format("%s Message has been sent.", LocalDateTime.now()));
-    // MachineMqttMessageSender.INSTANCE.shutdown();
+    MachineMqttMessageSender sender = MachineMqttMessageSender.getIntance();
+    sender.shutdown();
     System.out.println(String.format("%s shutdown has been called.", LocalDateTime.now()));
+    System.exit(0);
   }
 
   private static void createCommand(int counter) {
+    MachineMqttMessageSender sender = MachineMqttMessageSender.getIntance();
     String messageToPub = String.format("Sample java programm is sending a message to MQTT server. Message number %d",
         counter);
 
     MqttMessage message = new MqttMessage();
-    message.setQos(1);
     message.setPayload(messageToPub.getBytes());
-    MachineMqttMessageSender.INSTANCE.publish("/alexa", message);
+    sender.publish("/alexa", message);
   }
 }
