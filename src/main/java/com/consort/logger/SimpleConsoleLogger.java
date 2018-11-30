@@ -1,4 +1,4 @@
-package com.consort.mqttclient;
+package com.consort.logger;
 
 import java.time.LocalDateTime;
 import java.util.function.Supplier;

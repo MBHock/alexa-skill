@@ -10,6 +10,8 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 
+import com.consort.logger.SimpleConsoleLogger;
+
 /**
  * @author <a href="mailto:mojammal.hock@consort-group.com">Mojammal Hock</a>
  */

@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.util.Objects;
 import java.util.Properties;
 
+import com.consort.logger.SimpleConsoleLogger;
+
 /**
  * @author <a href="mailto:mojammal.hock@consort-group.com">Mojammal Hock</a>
  */

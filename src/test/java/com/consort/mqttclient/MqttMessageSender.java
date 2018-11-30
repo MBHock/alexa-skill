@@ -1,4 +1,4 @@
-package com.consort.mqttmsg;
+package com.consort.mqttclient;
 
 import java.time.LocalDateTime;
 
