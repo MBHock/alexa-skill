@@ -1,13 +1,9 @@
 package com.consort.event;
 
-import java.io.Serializable;
-
 /**
  * @author <a href="mailto:mojammal.hock@consort-group.com">Mojammal Hock</a>
  */
-public class MachineMqttEvent implements Serializable {
-
-  private static final long serialVersionUID = 1L;
+public class MachineMqttEvent {
 
   private String machineID;
   private MachineStatus machineStatus;

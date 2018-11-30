@@ -13,27 +13,16 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  */
 public class MachineMqttMessageSender {
 
-  // private static final Logger logger =
-  // LogManager.getLogger(MachineMqttMessageSender.class);
-  private static MachineMqttMessageSender instance;
-
   private IMqttClient client;
 
-  public static synchronized MachineMqttMessageSender getIntance() {
-    if (Objects.isNull(instance)) {
-      instance = new MachineMqttMessageSender();
-    }
-
-    return instance;
-  }
-
-  private MachineMqttMessageSender() {
+  public MachineMqttMessageSender() {
     try {
+
       client = new MqttClient(MqttConnectConfig.getEnvironmentProperty(MqttConnectConfig.MQTT_HOST),
           MqttClient.generateClientId(), null);
       client.connect(getMqttConnectOptions());
-
       System.out.println(String.format("Cleint is created %s", client));
+
     } catch (MqttException e) {
       throw new IllegalArgumentException(e);
     }
@@ -66,6 +55,6 @@ public class MachineMqttMessageSender {
 
   public void shutdown() throws MqttException {
     // client.disconnect();
-    client.disconnectForcibly();
+    client.disconnect(3 * 1000); // maximum disconect timeout
   }
 }
