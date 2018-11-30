@@ -58,7 +58,7 @@ public class MachineStatusIntentHandler implements RequestHandler {
         mqttEvent.setMachineID(machineId);
 
         slot = solts.get(SkillSlot.MACHINESTATUS.getSlotKey());
-        mqttEvent.setMachineStatus(MachineStatus.valueOf(slot.getValue()));
+        mqttEvent.setMachineStatus(MachineStatus.fromString(slot.getValue()));
 
         MqttMessage message = new MqttMessage();
 
