@@ -5,6 +5,9 @@ import java.io.InputStream;
 import java.util.Objects;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * @author <a href="mailto:mojammal.hock@consort-group.com">Mojammal Hock</a>
  */
@@ -12,8 +15,7 @@ public enum MqttConnectConfig {
 
   MQTT_HOST, MQTT_LOGIN, MQTT_PWD, MQTT_PORT, MQTT_PROTOCOL;
 
-  // private static final Logger logger =
-  // LogManager.getLogger(MqttConnectConfig.class);
+  //private static final Logger logger = LogManager.getLogger(MqttConnectConfig.class);
 
   private static Properties properties = new Properties();
   static {
