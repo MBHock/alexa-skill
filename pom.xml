@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.12</junit.version>
-    <mqtt.version>1.2.0</mqtt.version>
+    <mqtt.version>1.2.1</mqtt.version>
     <jdk.version>1.8</jdk.version>
     <alexa.sdk.version>2.9.1</alexa.sdk.version>
     <log4j.version>2.1</log4j.version>
